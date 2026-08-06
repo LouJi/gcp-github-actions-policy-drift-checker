@@ -6,7 +6,7 @@
 # Start with one project like this:
 projects:
   - type: project
-    id: my-project-1
+    id: directed-advice-503122-d8
     policy_file: policies/my-project-1.json
 
 # To track more later, just add entries:
