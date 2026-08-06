@@ -79,6 +79,7 @@ automatically, and the GCP service account needs the same read role
 granted on each additional project (or folder/org).
 
 ## Testing locally
+Use the following command to test manually.
 ```bash
 gcloud auth application-default login
 pip install -r requirements.txt
