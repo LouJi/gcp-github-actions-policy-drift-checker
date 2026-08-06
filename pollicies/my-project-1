@@ -1,0 +1,16 @@
+{
+  "bindings": [
+    {
+      "role": "roles/owner",
+      "members": [
+        "user:you@example.com"
+      ]
+    },
+    {
+      "role": "roles/viewer",
+      "members": [
+        "group:engineering@example.com"
+      ]
+    }
+  ]
+}
