@@ -72,6 +72,22 @@ right JSON file.
 Edit the `cron` line in `.github/workflows/iam-drift-check.yml` to your
 preferred time (cron is UTC, no DST auto-adjustment).
 
+## Reviewing and remediating drift
+
+The daily job only reports drift — it doesn't change anything. When it
+flags a difference, use `scripts/manage_iam_drift.py` to review each
+changed role/member individually and either approve it into the repo's
+desired state or revert it on GCP:
+
+```bash
+python scripts/manage_iam_drift.py        # dry run — review and decide
+python scripts/manage_iam_drift.py --apply  # apply your decisions
+```
+
+See [`docs/manage-iam-drift.md`](docs/manage-iam-drift.md) for the full
+walkthrough, including the GCP role this requires and a caveat on IAM
+Conditions.
+
 ## Adding more projects later
 Just append another entry to `projects.yaml` and add a matching
 `policies/<name>.json` file — the script loops over the whole list
